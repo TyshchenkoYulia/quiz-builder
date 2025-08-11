@@ -1,0 +1,66 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.questionCard {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.questionText {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.typeTag {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #eee;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.options {
+  list-style: none;
+  padding-left: 0;
+}
+
+.option {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+.option:last-child {
+  border-bottom: none;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 50px;
+}

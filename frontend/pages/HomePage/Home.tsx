@@ -3,6 +3,7 @@ import { getQuizzes, deleteQuiz } from "../../services/quizApi";
 import type { Quiz } from "../../services/quizApi";
 import { Link } from "react-router-dom";
 import css from "./Home.module.css";
+import { MdDeleteForever } from "react-icons/md";
 
 export default function HomePage() {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
@@ -48,13 +49,23 @@ export default function HomePage() {
       <ol className={css.list}>
         {quizzes.map((quiz) => (
           <li className={css.item} key={quiz.id}>
-            <Link to={`/quizzes/${quiz.id}`}>
-              <h2>{quiz.title}</h2>
-            </Link>
-            <p>
-              Questions: {quiz.questions?.length ?? quiz.questionCount ?? 0}
-            </p>
-            <button onClick={() => handleDelete(quiz.id)}>Delete</button>
+            <div className={css.itemContent}>
+              <Link to={`/quizzes/${quiz.id}`}>
+                <h2 className={css.titleQuiz}>{quiz.title}</h2>
+              </Link>
+              <p>
+                Questions: {quiz.questions?.length ?? quiz.questionCount ?? 0}
+              </p>
+            </div>
+            <button
+              className={css.btn}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDelete(quiz.id);
+              }}
+            >
+              <MdDeleteForever size={50} />
+            </button>
           </li>
         ))}
       </ol>

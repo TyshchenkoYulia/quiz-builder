@@ -12,4 +12,27 @@
   background-color: rgb(245, 241, 241);
   border-radius: 20px;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleQuiz {
+  color: black;
+}
+.btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+.itemContent {
+  display: flex;
+  flex-direction: column;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

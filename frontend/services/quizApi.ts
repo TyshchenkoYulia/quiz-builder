@@ -10,7 +10,7 @@ export interface Quiz {
   id: number;
   title: string;
   questionCount?: number;
-  questions?: Question[];
+  questions: Question[];
 }
 
 export async function getQuizzes(): Promise<Quiz[]> {
