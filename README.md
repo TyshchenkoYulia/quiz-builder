@@ -80,6 +80,32 @@ npm run dev
 
 The frontend will be available at http://localhost:5173 or the address shown in the terminal.
 
+## Running Frontend and Backend Concurrently
+
+To run both the frontend and backend servers at the same time, you can use the `concurrently` package.
+
+Make sure `concurrently` is installed (usually as a dev dependency in the root folder):
+
+```bash
+npm install concurrently --save-dev
+```
+
+Add a script in your root package.json like this:
+
+```bash
+"scripts": {
+  "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+}
+```
+
+Then run:
+
+```bash
+npm start
+```
+
+This will start both the backend and frontend servers simultaneously, showing their output in the same terminal window.
+
 ## Creating a Sample Quiz
 
 - Navigate to the quiz creation page in your browser (e.g., http://localhost:5173/create).

@@ -35,3 +35,18 @@
   background-color: blue;
   border-radius: 50%;
 }
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 12px 20px;
+    gap: 20px;
+    font-size: 16px;
+  }
+  .link {
+    padding-bottom: 5px;
+  }
+  .active::after {
+    width: 6px;
+    height: 6px;
+  }
+}

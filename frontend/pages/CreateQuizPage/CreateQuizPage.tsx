@@ -75,7 +75,10 @@ export default function CreateQuizPage() {
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
         <label>
           Quiz Title:
-          <input {...register("title", { required: true })} />
+          <input
+            className={css.title}
+            {...register("title", { required: true })}
+          />
         </label>
 
         {questions.map((question, qIndex) => {
@@ -83,7 +86,7 @@ export default function CreateQuizPage() {
           const options = watch(`questions.${qIndex}.options`) || [];
 
           return (
-            <div key={question.id} className={css.question}>
+            <div key={question.id} className={css.container}>
               <input
                 type="text"
                 placeholder={`Question ${qIndex + 1}`}
@@ -91,6 +94,7 @@ export default function CreateQuizPage() {
               />
 
               <select
+                className={css.select}
                 value={type}
                 onChange={(e) =>
                   handleTypeChange(qIndex, e.target.value as QuestionType)
@@ -129,9 +133,9 @@ export default function CreateQuizPage() {
               <button
                 type="button"
                 onClick={() => remove(qIndex)}
-                className={css.removeBtn}
+                className={css.deleteBtn}
               >
-                Remove Question
+                Delete Question
               </button>
             </div>
           );

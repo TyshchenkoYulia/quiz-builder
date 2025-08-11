@@ -5,12 +5,12 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 18px;
   margin-bottom: 20px;
   color: black;
 }
@@ -25,10 +25,11 @@
   background: #fff;
   padding: 15px;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .questionText {
-  font-size: 1.2rem;
+  font-size: 19px;
   margin-bottom: 5px;
 }
 
@@ -37,30 +38,50 @@
   padding: 4px 8px;
   background: #eee;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 13px;
   margin-bottom: 10px;
 }
 
 .options {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .option {
   padding: 5px 0;
   border-bottom: 1px solid #ddd;
 }
+
 .option:last-child {
   border-bottom: none;
 }
 
-.loading {
+.loading,
+.error {
   text-align: center;
   margin-top: 50px;
 }
 
 .error {
-  text-align: center;
   color: red;
-  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .questionText {
+    font-size: 17px;
+  }
+  .typeTag {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
 }
